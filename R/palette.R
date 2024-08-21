@@ -3,6 +3,11 @@
 #' These are the official colors as listed on the
 #' [Everforest palette page](https://github.com/sainnhe/everforest/blob/master/palette.md).
 #' @source https://github.com/sainnhe/everforest
+#' @name everforest_palette
+#'
+NULL
+
+#' @rdname everforest_palette
 #'
 dark_foreground <- list(
   fg = "#d3c6aa",
@@ -21,6 +26,8 @@ dark_foreground <- list(
   statusline_3 = "#e67e80" # unused in RStudio
 )
 
+#' @rdname everforest_palette
+#'
 dark_background <- list(
   hard = list(
     bg_dim = "#1e2326",
@@ -66,6 +73,8 @@ dark_background <- list(
   )
 )
 
+#' @rdname everforest_palette
+#'
 light_foreground <- list(
   fg = "#5c6a72",
   red = "#f85552",
@@ -83,6 +92,8 @@ light_foreground <- list(
   statusline_3 = "#e66868" # unused in RStudio
 )
 
+#' @rdname everforest_palette
+#'
 light_background <- list(
   hard = list(
     bg_dim = "#f2efdf",
