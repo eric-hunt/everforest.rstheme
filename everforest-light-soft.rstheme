@@ -482,7 +482,7 @@ table.rstheme_tabLayoutCenter .gwt-Label,
 .rstudio-themes-flat, .rstudio-themes-flat .rstudio-themes-scrollbars {
   /* Works on Firefox */
   scrollbar-width: auto;
-  scrollbar-color: #e5dfc5 rgba(243, 234, 211, 0.5);
+  scrollbar-color: rgba(166, 176, 160, 0.5) #e5dfc5;
   /* Works on Chrome, Edge, and Safari */
 }
 
@@ -491,17 +491,17 @@ table.rstheme_tabLayoutCenter .gwt-Label,
 }
 
 .rstudio-themes-flat *::-webkit-scrollbar-track, .rstudio-themes-flat .rstudio-themes-scrollbars *::-webkit-scrollbar-track {
-  background: rgba(243, 234, 211, 0.5);
+  background: #e5dfc5;
 }
 
 .rstudio-themes-flat *::-webkit-scrollbar-thumb, .rstudio-themes-flat .rstudio-themes-scrollbars *::-webkit-scrollbar-thumb {
-  background-color: #e5dfc5;
+  background-color: rgba(166, 176, 160, 0.5);
   border-radius: 0px;
   border: 2px solid #f3ead3;
 }
 
 .rstudio-themes-flat *::-webkit-scrollbar-thumb:hover, .rstudio-themes-flat .rstudio-themes-scrollbars *::-webkit-scrollbar-thumb:hover {
-  background-color: #ddd5b3;
+  background-color: rgba(153, 164, 146, 0.5);
 }
 
 /* fix overly zealous css rules */
