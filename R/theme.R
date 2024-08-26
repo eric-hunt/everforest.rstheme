@@ -5,7 +5,7 @@
 #' @param variant A string - the theme palette variant to use
 #' (hard, medium, soft); see [Everforest](https://github.com/sainnhe/everforest)
 #' @param apply A Boolean - generate and install/apply the .rstheme file (TRUE),
-#' or just save the .rstheme file without applying (FALSE)
+#' or just save the .rstheme file without applying (FALSE); defaults to FALSE
 #' @param as_sass A Boolean - save theme as .sass file and do not apply (TRUE),
 #' defaults to FALSE
 #' @param ... Additional arguments to pass to [rsthemes::rstheme()] overriding
@@ -15,7 +15,7 @@
 everforest_rstheme <- function(
     dark = TRUE,
     variant = "medium",
-    apply = TRUE,
+    apply = FALSE,
     as_sass = FALSE,
     ...) {
   variant.choices <- c("medium", "hard", "soft")
@@ -189,6 +189,8 @@ everforest_rstheme <- function(
     ui_rstudio_tabs_inactive_foreground = "$hl_2",
     ui_rstudio_tabs_active_background = "$bg_1",
     ui_rstudio_tabs_active_foreground = "$fg",
+    ui_rstudio_scrollbar_background = "$bg_2",
+    ui_rstudio_scrollbar_handle = "transparentize($hl, 0.5)",
     #
     ## ----------------------------------------
     ##  Interactions                        --
@@ -307,7 +309,6 @@ everforest_rstheme <- function(
       magenta = "$purple",
       magenta_bright = "$light_purple",
       white = "$white",
-      # white_bright = "$fg",
       black = "$black",
       black_bright = "$hl"
     ),

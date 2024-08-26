@@ -7,7 +7,7 @@
 everforest_rstheme(
   dark = TRUE,
   variant = "medium",
-  apply = TRUE,
+  apply = FALSE,
   as_sass = FALSE,
   ...
 )
@@ -20,7 +20,7 @@ defaults to TRUE}
 (hard, medium, soft); see \href{https://github.com/sainnhe/everforest}{Everforest}}
 
 \item{apply}{A Boolean - generate and install/apply the .rstheme file (TRUE),
-or just save the .rstheme file without applying (FALSE)}
+or just save the .rstheme file without applying (FALSE); defaults to FALSE}
 
 \item{as_sass}{A Boolean - save theme as .sass file and do not apply (TRUE),
 defaults to FALSE}
