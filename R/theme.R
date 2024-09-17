@@ -14,12 +14,14 @@
 #' @export
 everforest_rstheme <- function(
     dark = TRUE,
-    variant = "medium",
+    variant = c("medium", "hard", "soft"),
     apply = FALSE,
     as_sass = FALSE,
     ...) {
-  variant.choices <- c("medium", "hard", "soft")
-  variant <- match.arg(tolower(variant), variant.choices)
+  variant <- switch(
+    rlang::arg_match(variant),
+    hard = "Hard", soft = "Soft", "Medium"
+  )
 
   ef_foreground <- get(paste0(
     if (dark) "dark" else "light",
@@ -28,7 +30,7 @@ everforest_rstheme <- function(
   ef_background <- get(paste0(
     if (dark) "dark" else "light",
     "_background"
-  ))[[variant]]
+  ))[[tolower(variant)]]
   ef_pal <- c(
     ef_foreground,
     ef_background
@@ -37,22 +39,10 @@ everforest_rstheme <- function(
   lighten_factor <- 5
   darken_factor <- 5
   .lighten <- function(nm, by = lighten_factor) {
-    paste0(
-      "lighten($",
-      nm,
-      ", ",
-      by,
-      "%)"
-    )
+    sprintf("lighten($%s, %s%%)", nm, by)
   }
   .darken <- function(nm, by = darken_factor) {
-    paste0(
-      "darken($",
-      nm,
-      ", ",
-      by,
-      "%)"
-    )
+    sprintf("darken($%s, %s%%)", nm, by)
   }
 
   theme_palette <- list(
@@ -119,42 +109,16 @@ everforest_rstheme <- function(
     pal_parameters = "$fg"
   )
 
-  if (as_sass) {
-    theme_apply <- FALSE
-    theme_as_sass <- TRUE
-    theme_path <- here::here(
-      paste0(
-        "everforest-",
-        if (dark) "dark-" else "light-",
-        variant,
-        ".scss"
-      )
-    )
-  } else {
-    if (apply) {
-      theme_apply <- TRUE
-      theme_as_sass <- FALSE
-      theme_path <- here::here(
-        paste0(
-          "everforest-",
-          if (dark) "dark-" else "light-",
-          variant,
-          ".rstheme"
-        )
-      )
-    } else {
-      theme_apply <- FALSE
-      theme_as_sass <- FALSE
-      theme_path <- here::here(
-        paste0(
-          "everforest-",
-          if (dark) "dark-" else "light-",
-          variant,
-          ".rstheme"
-        )
-      )
-    }
-  }
+  theme_file <- paste0(
+    "everforest-",
+    if (dark) "dark-" else "light-",
+    tolower(variant),
+    if (as_sass) ".scss" else ".rstheme"
+  )
+
+  theme_apply <- apply && !as_sass
+  theme_as_sass <- as_sass
+  theme_path <- here::here(theme_file)
 
   theme_args <- list(
     ## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -322,11 +286,6 @@ everforest_rstheme <- function(
       .gwt-TabLayoutPanelTabInner .rstheme_tabLayoutCenter {
         box-shadow: 0 3px 0 $line_1 inset;
         border-radius: 0 !important;
-
-        .gwt-Label {
-          \\ font-weight: 600;
-          \\ color: $fg;
-        }
       }
     }
     ",
