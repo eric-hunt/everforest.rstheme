@@ -629,7 +629,7 @@ table.rstheme_tabLayoutCenter .gwt-Label,
   color: #515d64;
 }
 
-[class="ace_keyword"] {
+.ace_keyword {
   font-weight: 600;
 }
 

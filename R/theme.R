@@ -377,7 +377,7 @@ everforest_rstheme <- function(
     ',
     # - changes to code styling
     '
-    [class="ace_keyword"] {
+    .ace_keyword {
       font-weight: 600;
     }
     .ace_function {
@@ -387,13 +387,13 @@ everforest_rstheme <- function(
       font-style: italic;
     }
     .ace_constant {
-      color: $pal_booleans
+      color: $pal_booleans;
     }
     .ace_constant.ace_language {
-      color: $pal_booleans
+      color: $pal_booleans;
     }
     .ace_constant.ace_numeric {
-      font-color: $pal_values
+      font-color: $pal_values;
     }
     .ace_bracket {
       margin: -1px 0 0 -1px !important;
