@@ -627,6 +627,15 @@ table.rstheme_tabLayoutCenter .gwt-Label,
   border-radius: 1;
 }
 
+[class~="sourceCode"] {
+  background-clip: text !important;
+}
+
+pre, pre > code {
+  background: #1e2326;
+  background-clip: text;
+}
+
 .terminal {
   background-color: #272e33;
   color: #d3c6aa;

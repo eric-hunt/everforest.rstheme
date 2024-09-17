@@ -361,6 +361,15 @@ everforest_rstheme <- function(
       border: 0 !important;
       border-radius: 1;
     }
+    ',
+    '
+    [class~="sourceCode"] {
+      background-clip: text !important;
+    }
+    pre, pre > code {
+      background: $rmd_chunk_background;
+      background-clip: text;
+    }
     '
   )
   theme_args <- modifyList(theme_args, list(...))
