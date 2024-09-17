@@ -660,11 +660,6 @@ table.rstheme_tabLayoutCenter .gwt-Label,
   background-clip: text !important;
 }
 
-pre, pre > code {
-  background: #e5dfc5;
-  background-clip: text;
-}
-
 .terminal {
   background-color: #f3ead3;
   color: #5c6a72;
