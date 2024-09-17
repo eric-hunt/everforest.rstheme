@@ -390,6 +390,7 @@ everforest_rstheme <- function(
       color: $pal_booleans;
     }
     .ace_constant.ace_language {
+      font-weight: 600;
       color: $pal_booleans;
     }
     .ace_constant.ace_numeric {

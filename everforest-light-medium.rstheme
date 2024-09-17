@@ -646,6 +646,7 @@ table.rstheme_tabLayoutCenter .gwt-Label,
 }
 
 .ace_constant.ace_language {
+  font-weight: 600;
   color: #df69ba;
 }
 
